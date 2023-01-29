@@ -13,18 +13,35 @@
     <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=M+PLUS+Rounded+1c:wght@100;300;400&family=Outfit:wght@200;400;600&family=Shadows+Into+Light&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h1>Etch-A Sketch</h1>
-    <div class="header">
-        <h6>Select the size</h6>
-        <button id="popup">Select</button>
+    <h1 class="title">Etch-A Sketch</h1>
+    <div class="content">
+        <div class="principal">
+            <div class="header">
+                <h6>Select the size</h6>
+                <input class="range" type="range" min="10" max="100" step="1" value="16"/>
+                <div class="value">
+                    <output id="value">1</output>
+                </div>
+                <button id="select">Select</button>
+            </div>
+            
+            <div class="grid">
+                
+            </div>
+        </div>
+        <div class="side">
+            <div class="inputColor">
+                <input type="color" value="#000000" class="color">
+                <div class="info">
+                    <p class="inputText">Select</p>
+                    <p class="colorText">#000000</h2>
+                </div>
+            </div>
+            <div class="footer">
+                <button class="reset">Reset Grid</button>
+            </div>
+        </div>
     </div>
-    <div class="grid">
-        
-    </div>
-    <div class="footer">
-        <button>Black</button>
-        <button>Random</button>
-        <button>Reset</button>
-    </div>
+    
 </body>
 </html>

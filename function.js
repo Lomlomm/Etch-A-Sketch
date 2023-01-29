@@ -1,8 +1,48 @@
 
 document.addEventListener("DOMContentLoaded", function(){
     createBoard(16)
-   
+    chooseSize()
+    selectColor()
+    let selectButton = document.querySelector('#select'); 
+    let resetButton = document.querySelector('.reset');
+    let value = document.querySelector('.value');
+    selectButton.addEventListener("click", function(){
+        deletePreviousDivs()
+        createBoard(parseInt(value.textContent))
+    });
+    resetButton.addEventListener("click", function(){
+        deletePreviousDivs()
+        createBoard(parseInt(value.textContent))
+    });
 })
+
+function selectColor(){
+    let color = document.querySelector('.color')
+    let colorText = document.querySelector('.colorText')
+    colorText.textContent = color.value
+    color.addEventListener("input", (event)=>{
+        colorText.textContent = `${event.target.value}`
+    } )
+}
+function getColor(){
+    let color = document.querySelector('.color')
+    return color.value
+}
+function deletePreviousDivs(){
+    let divs = document.querySelectorAll('.casilla')
+    divs.forEach((div) => {
+        div.remove()
+    } )
+}
+
+function chooseSize(){
+    let range = document.querySelector('.range'); 
+    let value = document.querySelector('.value'); 
+    value.textContent = `${range.value}x${range.value}`
+    range.addEventListener("input", (event) => {
+        value.textContent = `${event.target.value}x${event.target.value}`
+    })
+}
 
 function createBoard(size){
     let grid = document.querySelector('.grid')
@@ -10,6 +50,7 @@ function createBoard(size){
     grid.style.display = "grid"
     grid.style.gridTemplateColumns = `repeat(${size}, 1fr)`
     grid.style.gridTemplateRows = `repeat(${size}, 1fr)`
+    
     for (let i = 0; i < size*size; i++){
         div = document.createElement('div'); 
         div.style.border = '1px solid #dbd7d7'
@@ -20,13 +61,13 @@ function createBoard(size){
             }
             else{
                 clicked = true
-                this.style.backgroundColor = 'black';
+                this.style.backgroundColor = getColor();
             }
             
         }); 
         div.addEventListener('mouseover', function(){
             if (clicked == true){
-                this.style.backgroundColor = 'black'
+                this.style.backgroundColor = getColor();
             }
             
         })
