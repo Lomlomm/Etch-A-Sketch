@@ -230,3 +230,31 @@ input[type="range"]::-webkit-slider-thumb {
     }
 
 }
+@media screen and (max-width: 400px) {
+    .header{
+        width: 80%;
+    }
+    .title{
+        margin-left: 0;
+    }
+    .grid{
+        width: 90%;
+        height: 80%;
+    }
+    .content{
+        width: fit-content;
+        height: fit-content;
+        margin-left: 0;
+    }
+    .principal{
+        height: 400px;
+    }
+    h6,
+    .value{
+        font-size: 50%;
+    }
+    .range{
+        width: 100px;
+    }
+
+}
