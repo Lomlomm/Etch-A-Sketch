@@ -5,6 +5,12 @@ body{
     align-items: center;
     background-image: url("img/background7.webp");
 }
+.all{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 .title{
     font-family: 'Amatic SC', cursive;
     font-size: 80px;
@@ -146,6 +152,81 @@ input[type="range"]::-webkit-slider-thumb {
 .reset{
     margin-bottom: 50px;
     background-color: rgba(138, 97, 32, 0.862);
-   
     height: 40px;
+}
+
+.footer-heart{
+    text-align:center;
+    font: 2.2vh Helvetica-Neue, Helvetica, sans-serif;
+
+}
+
+.footer-heart a{
+    border-bottom: 1px solid #ffd395;
+    color: #b17336;padding-bottom: .25em; 
+    text-decoration: none;
+}
+
+.footer-heart a:hover{
+    color:#bb745d; background-image: url("data:image/svg+xml;charset=utf8,%3Csvg id='squiggle-link' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:ev='http://www.w3.org/2001/xml-events' viewBox='0 0 20 4'%3E%3Cstyle type='text/css'%3E.squiggle{animation:shift .3s linear infinite;}@keyframes shift {from {transform:translateX(0);}to {transform:translateX(-20px);}}%3C/style%3E%3Cpath fill='none' stroke='%23453886' stroke-width='2' class='squiggle' d='M0,3.5 c 5,0,5,-3,10,-3 s 5,3,10,3 c 5,0,5,-3,10,-3 s 5,3,10,3'/%3E%3C/svg%3E");
+    background-position: bottom;
+    background-repeat: repeat-x;
+    background-size: 20%;
+    border-bottom: 0;
+    padding-bottom: .3em;
+    text-decoration: none;
+}
+
+@media screen and (max-width: 800px){
+    .header{
+        width: 80%;
+    }
+    .grid{
+        width: 80%;
+        height: 70%;
+    }
+    .range{
+        width: 100px;
+    }
+    .content{
+        width: 80%;
+        height: 80%;
+    }
+}
+
+@media screen and (max-width: 600px){
+    .content{
+        flex-direction: column;
+        align-items: center;
+        height: fit-content;
+        margin-left: 10%;
+    }
+    .title{
+        margin-left: 10%;
+    }
+    .side{
+        height: fit-content;
+        
+    }
+    .principal{width: 100%;}
+    .reset{margin-bottom: 10px;}
+
+}
+
+@media screen and (max-width: 550px) {
+    .header{
+        width: 80%;
+    }
+    .grid{
+        width: 80%;
+        height: 70%;
+    }
+    h6,
+    .value{
+        font-size: 50%;
+    }
+    .range{
+        width: 100px;
+    }
+
 }
